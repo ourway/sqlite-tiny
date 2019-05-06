@@ -8,6 +8,7 @@ My first attemp to write a sqlite3 clone.  It's just an experimental attempt to 
 - [ ] Learn how to use `getline`
 
 
+## Other stuff
 - Requirements:
 Sqlite-tiny requires `clang` to compile, although it's completely ok to compile it with
 `gcc`.
