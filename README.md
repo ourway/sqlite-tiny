@@ -1,19 +1,26 @@
 # sqlite-tiny
 My first attemp to write a sqlite3 clone.  It's just an experimental attempt to understand RDBMS. Please never use it in any production.
 
-## Requirements:
+
+## TODOs
+- [x] Prepare basic structure of project
+- [ ] Find a good Unit Testing framework for C
+- [ ] Learn how to use `getline`
+
+
+- Requirements:
 Sqlite-tiny requires `clang` to compile, although it's completely ok to compile it with
 `gcc`.
 
-## Compiling:
+- Compiling:
 ```bash
 make
 ```
 
-## Running:
+- Running:
 ```bash
 ./bin/database
 ```
-### Feel free to ask me anything.  Drop me a mail at: `rodmena@me.com`
+- Feel free to ask me anything.  Drop me a mail at: `rodmena@me.com`
 
 -- Farsheed
