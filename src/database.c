@@ -3,12 +3,16 @@
 //
 // Actually, I don't know what's this first line doing.
 // UPDATE: I guess this is related to macro tests, but not sure. #TODO
+//
+// ---------------------- includes and definitions -------------------
 #define _GNU_SOURCE
 // Import IO library. getline comes with this include
 #include <stdio.h>
 // Include standard library
 #include <stdlib.h>
 
+// ---------------------- code logic ---------------------------------
+//
 // argc is the number of input arguments and argv is an array of those
 int main(int argc, char *argv[]) {
   /*
@@ -32,6 +36,8 @@ int main(int argc, char *argv[]) {
   // the number of read characters)
   ssize_t nread;
 
+  // ---------------------- validations --------------------------------
+  //
   // Now, lets check if input includes required args:
   if (argc != 2) {
     // we write out to stderr using fprintf
@@ -40,9 +46,12 @@ int main(int argc, char *argv[]) {
     exit(EXIT_FAILURE);
   }
 
+  // ---------------------- opening input ------------------------------
+  //
   // now lets open the input file using fopen in "read mode"
   stream = fopen(argv[1], "r");
 
+  // ---------------------- validation ---------------------------------
   // let's check if stream is null
 
   if (stream == NULL) {
@@ -52,6 +61,8 @@ int main(int argc, char *argv[]) {
     exit(EXIT_FAILURE);
   }
 
+  // ---------------------- reading the file and printing --------------
+  //
   // Now that everything looks ok, let's READ the file line by line
   // getline will result to -1 if line is empty, so
   while ((nread = getline(&lineptr, &len, stream)) != -1) {
@@ -65,4 +76,5 @@ int main(int argc, char *argv[]) {
   free(lineptr);
   fclose(stream);
   exit(EXIT_SUCCESS);
+  // -------------------------------------------------------------------
 }
